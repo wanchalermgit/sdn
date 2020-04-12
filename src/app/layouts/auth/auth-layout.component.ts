@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
@@ -14,7 +13,7 @@ export class AuthLayoutComponent implements OnInit {
   private _router: Subscription;
 
   constructor(private router: Router, private element: ElementRef) {
-      this.sidebarVisible = false;
+      this.sidebarVisible = true;
   }
   ngOnInit(){
     const navbar: HTMLElement = this.element.nativeElement;
