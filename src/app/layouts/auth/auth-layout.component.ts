@@ -1,6 +1,12 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import {  OnDestroy, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { NavItem, NavItemType } from '../../md/md.module';
+import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
+import 'rxjs/add/operator/filter';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 @Component({
   selector: 'app-layout',
@@ -11,12 +17,17 @@ export class AuthLayoutComponent implements OnInit {
   private sidebarVisible: boolean;
   mobile_menu_visible: any = 0;
   private _router: Subscription;
+  location: Location;
 
-  constructor(private router: Router, private element: ElementRef) {
-      this.sidebarVisible = true;
+  constructor(private router: Router, private element: ElementRef, location: Location) {
+      this.sidebarVisible = false;
+      this.location = location;
   }
   ngOnInit(){
     const navbar: HTMLElement = this.element.nativeElement;
+    this.location.subscribe((ev:PopStateEvent) => {
+      this.lastPoppedUrl = ev.url;
+  });
 
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -97,4 +108,11 @@ export class AuthLayoutComponent implements OnInit {
           this.sidebarClose();
       }
   }
+  public isMap() {
+    if (this.location.prepareExternalUrl(this.location.path()) === '/maps/fullscreen') {
+        return true;
+    } else {
+        return false;
+    }
+}
 }

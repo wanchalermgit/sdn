@@ -38,4 +38,6 @@
 </nav>
   <router-outlet></router-outlet>
 <app-footer-cmp></app-footer-cmp>
-<app-fixedplugin></app-fixedplugin>
+<div *ngIf="!isMap()">
+  <app-fixedplugin></app-fixedplugin>
+</div>

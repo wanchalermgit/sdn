@@ -46,7 +46,7 @@ export class SdnHomeComponent implements OnInit {
       animation: google.maps.Animation.BOUNCE
     });
     const infoWindow = new google.maps.InfoWindow({
-      content: '<div style="font-size: 25px;color: red">ด่านทางแยกวัดสะกัดน้ำมัน</div>'
+      content: '<div><b style="font-size: 1.3rem;"><img src="/assets/img/siren-light.gif" style="width: 22px;" />[ขาเข้าเมือง] ด่านตรงข้ามโรงแรมเดอะเรสท์</b> <hr /><p style="text-indent: 1.4rem;" >ประชาชนที่มาจากอำเภอบางกระทุ่ม ท่าโพธิ์ วังน้ำคู้ วัดพริก งิ้วงาม สามารถใช้เส้นทางผ่านหน้าวัดจุฬามณีเพื่อเข้าเมืองพิษณุโลกได้</p></div>'
     });
     // To add the marker to the map, call setMap();
     // Marker.setMap(map);
