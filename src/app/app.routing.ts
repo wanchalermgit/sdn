@@ -12,10 +12,15 @@ export const sdnRoutes: Routes = [
     {
         path: '',
         component: AuthLayoutComponent,
-        children: [{
-            path: '',
-            loadChildren: './pages/pages.module#PagesModule'
-        }]
+        children: [
+            {
+                path: '',
+                loadChildren: './pages/pages.module#PagesModule'
+            }, {
+                path: 'maps',
+                loadChildren: './maps/maps.module#MapsModule'
+            }
+        ]
     }
 ]
 
