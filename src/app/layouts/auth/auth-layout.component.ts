@@ -18,6 +18,7 @@ export class AuthLayoutComponent implements OnInit {
   mobile_menu_visible: any = 0;
   private _router: Subscription;
   location: Location;
+  private lastPoppedUrl: string;
 
   constructor(private router: Router, private element: ElementRef, location: Location) {
       this.sidebarVisible = false;
