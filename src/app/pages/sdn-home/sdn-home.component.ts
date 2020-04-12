@@ -26,12 +26,23 @@ export class SdnHomeComponent implements OnInit {
       scrollwheel: false, // we disable de scroll over the map, it is a really annoing when you scroll through page
     };
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    var image = {
+      url: '/assets/img/new_logo.png'
+    };
     const Marker = new google.maps.Marker({
       position: myLatlng,
-      title: 'ด่านแถวบ้าน'
+      title: 'ด่านแถวบ้าน',
+      map: map,
+      icon: image,
+      animation: google.maps.Animation.BOUNCE
+    });
+    const infoWindow = new google.maps.InfoWindow({
+      content: '<div style="font-size: 25px;color: red">ด่านทางแยกวัดสะกัดน้ำมัน</div>'
     });
     // To add the marker to the map, call setMap();
-    Marker.setMap(map);
+    // Marker.setMap(map);
+    infoWindow.open(map, Marker);
   }
 
 }
