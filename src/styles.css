@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'kanit-font';
+    src: url('./assets/fonts/kanit/Kanit-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'kanit-tin-font';
+    src: url('./assets/fonts/kanit/Kanit-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'kanit-medium-font';
+    src: url('./assets/fonts/kanit/Kanit-Light.ttf');
+}
+
+.kanit-font {
+    font-family: kanit-font;
+}
+
+.kanit-tin-font {
+    font-family: kanit-tin-font;
+}
+
+.kanit-medium-font {
+    font-family: kanit-medium-font;
+}
+.font-0_9 {
+    font-size: 0.9rem;
+}
