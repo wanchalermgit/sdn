@@ -7,10 +7,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PagesRoutes } from './pages.routing';
 
+import { FooterComponent } from '../shared/footer/footer.component';
+
 import { RegisterComponent } from './register/register.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { LockComponent } from './lock/lock.component';
 import { LoginComponent } from './login/login.component';
+import { SdnHomeComponent } from './sdn-home/sdn-home.component';
 
 @NgModule({
   imports: [
@@ -24,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
     RegisterComponent,
     PricingComponent,
-    LockComponent
+    LockComponent,
+    SdnHomeComponent
   ]
 })
 

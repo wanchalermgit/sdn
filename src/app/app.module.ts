@@ -47,7 +47,7 @@ import { FixedpluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
-import { AppRoutes } from './app.routing';
+import { AppRoutes, sdnRoutes } from './app.routing';
 
 @NgModule({
   exports: [
@@ -90,9 +90,7 @@ export class MaterialModule {}
         CommonModule,
         BrowserAnimationsModule,
         FormsModule,
-        RouterModule.forRoot(AppRoutes,{
-          useHash: true
-        }),
+        RouterModule.forRoot(sdnRoutes),
         HttpClientModule,
 
         MaterialModule,
