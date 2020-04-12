@@ -16,7 +16,7 @@ draggable?: boolean;
 
 export class FullScreenMapsComponent implements OnInit {
     ngOnInit() {
-        const myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        const myLatlng = new google.maps.LatLng(16.763050, 100.215180);
         const mapOptions = {
             zoom: 13,
             center: myLatlng,
@@ -25,7 +25,7 @@ export class FullScreenMapsComponent implements OnInit {
         const map = new google.maps.Map(document.getElementById('map'), mapOptions);
         const Marker = new google.maps.Marker({
             position: myLatlng,
-            title: 'Hello World!'
+            title: 'ด่านแถวบ้านผม'
         });
     // To add the marker to the map, call setMap();
     Marker.setMap(map);
