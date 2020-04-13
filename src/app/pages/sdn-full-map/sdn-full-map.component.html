@@ -1,2 +1,2 @@
-<app-sdn-home></app-sdn-home>
-<app-location-list></app-location-list>
+<app-sdn-home [locationData] = "currentLocation" ></app-sdn-home>
+<app-location-list (selectedCheckpoint)="selectedLocation($event)"></app-location-list>

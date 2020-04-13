@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { sdn_data } from '../../shared/data/sdn';
 
 @Component({
@@ -7,14 +7,18 @@ import { sdn_data } from '../../shared/data/sdn';
   styleUrls: ['./location-list.component.css']
 })
 export class LocationListComponent implements OnInit {
+  @Output() selectedCheckpoint = new EventEmitter<any>();
 
   checkpoints = sdn_data;
 
   constructor() {
-    console.log('sdn data: ', sdn_data);
   }
 
   ngOnInit(): void {
+  }
+
+  selectLocation(checkpoint) {
+    this.selectedCheckpoint.emit(checkpoint);
   }
 
 }

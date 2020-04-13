@@ -16,5 +16,13 @@ export const sdn_data = [
         lat: 16.862162,
         lng: 100.225040,
         note: ''
+    },{
+        id: 3,
+        name: 'หน้าหมู่บ้านเอื้ออาทรหัวรอ',
+        description: '...',
+        type: 'ขาเข้า',
+        lat: 16.722162,
+        lng: 100.229040,
+        note: ''
     }
 ];

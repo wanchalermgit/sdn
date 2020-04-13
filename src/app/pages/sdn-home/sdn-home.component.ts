@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ElementRef, OnDestroy, OnChanges, Input, SimpleChange } from '@angular/core';
 
 declare const google: any;
 declare var $: any;
@@ -20,6 +20,8 @@ export class SdnHomeComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
   private nativeElement: Node;
+
+  @Input() locationData: any;
 
 
   constructor(private element: ElementRef) {
@@ -85,6 +87,15 @@ export class SdnHomeComponent implements OnInit {
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('login-page');
     body.classList.remove('off-canvas-sidebar');
+  }
+
+  setCheckpointMap() {
+    
+  }
+
+  ngOnChanges(changeData: SimpleChange) {
+    console.log('event data change: ', changeData['locationData']);
+    console.log('event data change: ', changeData['locationData'].currentValue);
   }
 
 }

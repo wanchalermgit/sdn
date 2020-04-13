@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SdnFullMapComponent implements OnInit {
 
+  currentLocation: any;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedLocation(locationData){
+    console.log('this is log from stn full map component', locationData);
+    this.currentLocation = locationData;
   }
 
 }

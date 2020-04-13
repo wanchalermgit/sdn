@@ -1,14 +1,14 @@
 <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
         <a href="#" data-toggle="dropdown" aria-expanded="true">
-            <i class="fa fa-cog fa-2x"> </i>
+            <i class="fa fa-dot-circle-o fa-2x" style="color: white; margin-top: 9px; margin-bottom: 8px;"> </i>
         </a>
         <ul class="dropdown-menu">
             <h3 class="font-size-1_1 kanit-font">รายการด่านคัดกรองจังหวัดพิษณุโลก</h3>
             <p class="sub-title kanit-medium-font font-0_8">อัปเดท: วันที่ 13 เมษายน 2563 04.00 น.</p>
             <table class="table table-hover">
                 <tbody>
-                    <tr *ngFor="let checkpoint of checkpoints">
+                    <tr (click)="selectLocation(checkpoint)" style="cursor: pointer;" *ngFor="let checkpoint of checkpoints">
                         <td class="kanit-font font-0_9">{{ checkpoint.id }}</td>
                         <td class="kanit-font font-0_9">{{ checkpoint.name }}</td>
                     </tr>
