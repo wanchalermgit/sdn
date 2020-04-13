@@ -89,15 +89,14 @@ export class SdnHomeComponent implements OnInit {
     body.classList.remove('off-canvas-sidebar');
   }
 
-  setCheckpointMap(positionData: {id: number, name: string, lat: number, lng: number, description: string, note: string, type: string}) {
+  setCheckpointMap(positionData: {id: number, name: string,type: string,  lat: number, lng: number, description: string, note: string}) {
     const myLatlng = new google.maps.LatLng(positionData.lat, positionData.lng);
     const mapOptions = {
       zoom: 17,
       center: myLatlng,
       scrollwheel: false, // we disable de scroll over the map, it is a really annoing when you scroll through page
     };
-    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions); 
     const Marker = new google.maps.Marker({
       position: myLatlng,
       title: positionData.name,
@@ -105,7 +104,7 @@ export class SdnHomeComponent implements OnInit {
       animation: google.maps.Animation.BOUNCE
     });
     const infoWindow = new google.maps.InfoWindow({
-      content: '<div><b class="kanit-font" style="font-size: 1.3rem;"><img src="https://www.tony-dev.com/sdn/assets/img/siren-light.gif" style="width: 22px;" /> [' + positionData.type + '] ' + positionData.name + '</b> <hr /><p class="kanit-font" style="text-indent: 2.2rem;" >ประชาชนที่มาจากอำเภอบางกระทุ่ม ท่าโพธิ์ วังน้ำคู้ วัดพริก งิ้วงาม สามารถใช้เส้นทางผ่านหน้าวัดจุฬามณีเพื่อเข้าเมืองพิษณุโลกได้</p></div>'
+      content: '<div><b class="kanit-font" style="font-size: 1.3rem;"><img src="https://www.tony-dev.com/sdn/assets/img/siren-light.gif" style="width: 22px;" /> [' + positionData.type + '] ' + positionData.name + '</b> <hr /><p class="kanit-font" style="text-indent: 2.2rem;" >'+positionData.description+'</p></div>'
     });
     // To add the marker to the map, call setMap();
     // Marker.setMap(map);
