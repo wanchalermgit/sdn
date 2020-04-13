@@ -5,6 +5,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { LockComponent } from './lock/lock.component';
 import { LoginComponent } from './login/login.component';
 import { SdnHomeComponent } from './sdn-home/sdn-home.component';
+import { SdnFullMapComponent } from './sdn-full-map/sdn-full-map.component';
 
 export const PagesRoutes: Routes = [
 
@@ -25,7 +26,7 @@ export const PagesRoutes: Routes = [
                 component: PricingComponent
             },  {
                 path: '',
-                component: SdnHomeComponent
+                component: SdnFullMapComponent
             }
         ]
     }

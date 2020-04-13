@@ -1,4 +1,3 @@
-<!-- Fixed Plugin configurator, used just for Demo Purpose -->
 <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
         <a href="#" data-toggle="dropdown" aria-expanded="true">
@@ -9,9 +8,9 @@
             <p class="sub-title kanit-medium-font font-0_8">อัปเดท: วันที่ 13 เมษายน 2563 04.00 น.</p>
             <table class="table table-hover">
                 <tbody>
-                    <tr>
-                        <td>1.</td>
-                        <td>ด่าน.....</td>
+                    <tr *ngFor="let checkpoint of checkpoints">
+                        <td class="kanit-font font-0_9">{{ checkpoint.id }}</td>
+                        <td class="kanit-font font-0_9">{{ checkpoint.name }}</td>
                     </tr>
                 </tbody>
             </table>

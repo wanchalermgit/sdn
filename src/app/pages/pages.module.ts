@@ -8,12 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagesRoutes } from './pages.routing';
 
 import { FooterComponent } from '../shared/footer/footer.component';
+import { FixedpluginComponent } from '../shared/fixedplugin/fixedplugin.component';
+import { FixedpluginModule } from '../shared/fixedplugin/fixedplugin.module';
 
 import { RegisterComponent } from './register/register.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { LockComponent } from './lock/lock.component';
 import { LoginComponent } from './login/login.component';
 import { SdnHomeComponent } from './sdn-home/sdn-home.component';
+import { SdnFullMapComponent } from './sdn-full-map/sdn-full-map.component';
+import { LocationListComponent } from './location-list/location-list.component';
 
 @NgModule({
   imports: [
@@ -21,14 +25,18 @@ import { SdnHomeComponent } from './sdn-home/sdn-home.component';
     RouterModule.forChild(PagesRoutes),
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     LoginComponent,
     RegisterComponent,
     PricingComponent,
     LockComponent,
-    SdnHomeComponent
+    SdnHomeComponent,
+    SdnFullMapComponent,
+    LocationListComponent,
+    // FixedpluginComponent,
+    // FooterComponent
   ]
 })
 
